@@ -1,0 +1,18 @@
+window.CONFIG = {
+    VERSION: '1.2.1',
+    API_VERSION: 'v1',
+    CALLBACK_LOGIN: 'http://cmcloginv2.flydev.chinamcloud.cn/',
+    CMC_CONSOLE_URL: 'http://cmcconsolev2.flydev.chinamcloud.cn',
+    // CMC_CONSOLE_URL: 'http://console.cmc.gcable.cn',
+    // CALLBACK_LOGIN: 'https://cmclogin.flydev.chinamcloud.cn/login/index?call_back=http://pcs.wjdev.chinamcloud.cn/#/plans/have',
+    // CMC_CONSOLE_URL: 'https://cmcconsole.flydev.chinamcloud.cn',
+    CMC_CONSOLE_HEADER_LEFT_CSS: '/cmc/cmc_header_left.css',
+    CMC_CONSOLE_HEADER_LEFT_JS: '/cmc/cmc_header_left.js',
+    CMC_CONSOLE_HEADER_SUBMENU_CSS:'/cmc/cmc_submenu.css',
+    CMC_CONSOLE_HEADER_SUBMENU_JS:'/cmc/cmc_submenu.js',
+    CMC_PRODUVTID:'ncms',
+    CMC_TITLE:'新cms',
+    // CMC_TITLE:'选题管控',
+    // CMC_PRODUVTID:'xtgk',
+    APPID: 'c73456fcc61c8e3d4ac782cd90fd4dca',
+}

@@ -1,0 +1,76 @@
+@import "themes";
+//字体颜色
+//@font-color-normal: #222222;
+//@font-color-blue: #3c7ffa;
+//@font-color-gray: #aaaaaa;
+//@font-color-light-gray: #666666;
+//@font-color-orange: #feb518 ;
+
+//字体颜色
+@font-color-normal: @text-color;
+@font-color-blue: @primary-color;
+@font-color-gray: #aaaaaa;
+@font-color-light-gray: #666666;
+@font-color-orange: #feb518 ;
+
+
+//边框颜色
+@border-color-normal: #e8e8e8;
+
+//背景色
+@background-color-white: #fff;
+@background-color-lightGray: #f6f7f9;
+
+//弹性布局
+.flexcenter{
+  -ms-justify-content:center;
+  -webkit-justify-content:center;
+  justify-content:center;
+  -ms-justify:center;
+  -webkit-justify:center;
+  justify:center;
+  -ms-box-align:center;
+  -webkit-box-align:center;
+  box-align:center;
+  -ms-align-items:center;
+  -webkit-align-items:center;
+  align-items:center
+}
+.displayflex {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+.flex {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.flexflowCol{
+  -webkit-box-orient: vertical;
+  -ms-box-orient: vertical;
+  -moz-box-orient: vertical;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  -moz-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+}
+.flexflowRow{
+  -webkit-box-orient: horizontal;
+  -ms-box-orient: horizontal;
+  -moz-box-orient: horizontal;
+  -webkit-flex-flow: row nowrap;
+  -ms-flex-flow: row nowrap;
+  -moz-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+}
+.border-radius{
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  border-radius: 4px;
+}

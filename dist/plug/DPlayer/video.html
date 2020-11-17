@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>视频素材预览</title>
+	<link rel="stylesheet" href="./css/DPlayer.min.css">
+	<script src="./js/DPlayer.min.js"></script>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		#dplayer{
+			width:880px;
+			height:490px;
+			margin:0 auto;
+		}
+		.dplayer-menu.dplayer-menu-show{
+			display:none !important;
+		}
+		.dplayer:-webkit-full-screen{
+			width:100% !important;
+			height:100% !important;
+		}
+	</style>
+</head>
+<body>
+	<div id="dplayer"></div>
+	<script type="text/javascript">
+		window.onload = function(){
+			var videoData = window.parent.editorData.videoPrevData;
+			var dp = new DPlayer({
+			    container: document.getElementById('dplayer'),
+			    screenshot: false,
+			    video: {
+			        url: videoData.videoAddressDtoList[0].videoUrl,
+			        pic: videoData.posterUrl
+			    },
+			});
+		}
+
+	</script>
+</body>
+</html>

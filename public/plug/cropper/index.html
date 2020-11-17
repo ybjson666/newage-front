@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="A simple jQuery image cropping plugin.">
+  <meta name="author" content="Chen Fengyuan">
+  <title>Cropper</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="icon" href="favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/cropper.css">
+  <link rel="stylesheet" href="css/main.css">
+  <style>
+    .form-control{
+      background-color:#fff !important;
+    }
+/*     .sr-only,.btn-primary{
+      color: #fff;
+      background-color: #07b2b4;
+      border-color: #07b2b4;
+      outline: 0;
+    }
+
+     .sr-only:active,.btn-primary:active,  .btn-primary.active{
+      color: #fff !important;
+      background-color: #00888f !important;
+      border-color: #00888f !important;
+    }
+     .sr-only:hover,.btn-primary:hover,.btn-primary:focus {
+      color: #fff;
+      background-color: #27c2bf;
+      border-color: #27c2bf;
+      box-shadow:none !important;
+  } */
+
+    .sr-only,.btn-primary{
+       color: #07b2b4;
+      background-color: #fff;
+      border-color: #d9d9d9;
+      border-style: dashed;
+    }
+
+    .sr-only:hover,.btn-primary:hover,.btn-primary:focus {
+      color: #07b2b4;
+      background-color: #fff;
+      border-color: #07b2b4;
+      box-shadow:none !important;
+    }
+
+    .sr-only:active,.btn-primary:active,  .btn-primary.active{
+      color: #07b2b4 !important;
+      background-color: #fff !important;
+      border-color: #07b2b4 !important;
+      box-shadow:none !important;
+    }
+
+  button{
+    outline:none;
+  }
+   .row{
+    width:645px;
+    height:150px;
+    margin:0 auto;
+   }
+  .row .col{
+    float:left;
+  }
+  .row .col-l{
+    margin-right:80px;
+  }
+  .row .col-r h3{
+    margin-top:50px;
+    font-size:14px;
+    font-weight:normal;
+    text-align:center;
+  }
+  .clearfix:after{
+  display: block;
+  content:'';
+  clear: both;
+  height:0;
+}
+.preview-lg{
+  width:180px;
+  height:135px;
+}
+.cropper-bg{
+  background:#787878;
+}
+
+
+  </style>
+</head>
+<body>
+  <img src=""  id="Base64Img" alt=""   style="display:none"/>
+  <!-- Content -->
+  <div class="container">
+    <div class="row clearfix">
+      <div class="col col-l">
+        <!-- <h3>Demo:</h3> -->
+        <div class="img-container">
+          <img id="image"  src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  alt="Picture">
+        </div>
+      </div>
+      <div class="col col-r">
+        <!-- <h3>Preview:</h3> -->
+        <h3>预览效果</h3>
+        <div class="docs-preview clearfix">
+          <div class="img-preview preview-lg"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="display: none">
+      <div class="col-md-8 docs-buttons">
+        <button type="button" style="opacity:0;"  id="getCroppedCanvas"  class="btn btn-success" data-method="getCroppedCanvas" data-option="{ &quot;width&quot;: 320, &quot;height&quot;: 180 }">
+            <span class="docs-tooltip" data-toggle="tooltip" data-animation="false" title="$().cropper(&quot;getCroppedCanvas&quot;, { width: 320, height: 180 })">
+              320&times;180
+            </span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+  <script src="https://fengyuanchen.github.io/js/common.js"></script>
+  <script src="js/cropper.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

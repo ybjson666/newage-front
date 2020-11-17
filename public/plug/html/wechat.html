@@ -1,0 +1,302 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <meta name="apple-mobile-web-app-capable" content="yes">  <!--网站开启对 web app 程序的支持-->
+    <meta name="apple-touch-fullscreen" content="yes">
+    <title>微信组稿</title>
+    <meta name="keywords"  content="关键词"/>
+    <meta name="description" content="网站介绍"/>
+    <meta http-equiv="pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache, must-revalidate" />
+    <meta http-equiv="expires" content="Wed, 26 Feb 1997 08:21:57 GMT" />
+    <style>
+        html {
+            overflow-x:auto;
+            overflow-y:scroll;
+        }
+
+        body {
+            background-color:#EEEEED;
+            color:#808080;
+            font-size: 12px;
+            font-family:Microsoft Yahei;
+        }
+
+        body,dl,dt,dd,ul,ol,li,pre,form,fieldset,input,p,blockquote,th,td,label,textarea,span,p,button
+
+        ,h1, h2, h3, h4, h4, h5{
+            margin:0;
+            padding:0;
+        }
+
+        dl,dt,dd,ul,li{
+            list-style:none;
+            list-style-type:none;
+        }
+
+        img{
+
+            border:0;
+
+            max-width: 100%;
+
+            height: auto;
+
+        }
+
+        a,span {
+
+            text-decoration: none;
+
+            /*手机上去掉a标签里面的img点击时的阴影*/
+
+            -webkit-tap-highlight-color: transparent;
+
+            -webkit-touch-callout: none;
+
+            -webkit-user-select: none;
+
+        }
+
+        ol, ul {
+
+            list-style-image:none;
+
+            list-style-position:outside;
+
+            list-style-type:none;
+
+        }
+
+        caption, th {
+
+            text-align:left;
+
+        }
+
+        a:focus {
+
+            outline:none;
+
+        }
+        .headA p {
+
+            font-size: 1.5em;
+
+            color: #F7F6F9;
+
+            text-align: center;
+
+        }
+        .hea1 span {
+
+            display: inline-block;
+
+            width: 56px;
+
+            height: 56px;
+
+            margin-top: 7%;
+
+            overflow: hidden;
+
+            border: #9C9491 solid 2px;
+
+            border-radius: 10px;
+
+            -webkit-border-radius: 10px;
+
+        }
+        .hea1 p {
+            padding: 2% 0px 7% 0;
+            color: #FFF;
+            text-align: center;
+        }
+        .hea2 img {
+            width: 59px;
+            height: 59px;
+            padding: 18% 0;
+            overflow: hidden;
+        }
+        .backGFFF {
+            background-color: #FFF;
+        }
+        .padd10 {
+            width: 95%;
+            margin: 0 2.5%;
+            padding:10px 0;
+            overflow: hidden;
+            border-bottom: #E1E2E5 solid 1px;
+        }
+
+        .padd10 dt{
+            float: right;
+            display: inline;
+        }
+        .padd10 dt {
+            width: 65px;
+        }
+
+        .padd10 dd {
+            float:left;
+            width:75%;
+        }
+
+        .padd10 dt img {
+            width:65px;
+            height: 65px;
+            overflow: hidden;
+        }
+
+        .padd10 dd h2 {
+            color: #000;
+            font-size: 1.3em;
+            font-weight: normal;
+            overflow: hidden;
+            line-height: 22px;
+            height: 44px;
+            margin:13px 0 0 0;
+
+        }
+        .big_img {
+            width: 100%;
+            max-height: 360px;
+        }
+        .big_a {
+            width: 100%;
+            height: 130px;
+            float: left;
+            overflow: hidden;
+            position: relative;
+            font-size: 1.2em;
+        }
+        .big_p {
+            position: absolute;
+            width: 90%;
+            right: 0;
+            bottom: 0;
+            color: #fff;
+            font-size: 1.2em;
+            overflow: hidden;
+            line-height: 24px;
+            padding:10px 5%;
+            background: rgba(0,0,0,.4);
+            word-wrap:break-word;
+        }
+        .big_bg {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            right: 0;
+            background: rgba(0,0,0,.12);
+        }
+        @media screen and (min-width:640px) {
+            html,body{
+                max-width:640px;
+                margin:0 auto;
+            }
+            .padd10 dt {
+                width: 95px;
+            }
+            .padd10 dd {
+                float:left;
+                width:75%;
+            }
+            .padd10 dt img {
+                width:95px;
+                height: 95px;
+                overflow: hidden;
+            }
+        }
+        article{
+            padding: 10px;
+            background: #f0f0f0;
+        }
+        .backGFFF{
+            background: #fff;
+            border-radius: 5px;
+            padding: 10px 0;
+        }
+    </style>
+</head>
+<body>
+<article>
+    <section class="backGFFF">
+        <div class="content">
+            <div class="lists">
+
+            </div>
+        </div>
+    </section>
+</article>
+<!--<script src="../../config/index.js"></script>-->
+<script src="../jquery/jquery.min.js"></script>
+<script>
+    function GetRequest() {
+        var url = location.search; //获取url中"?"符后的字串
+        var theRequest = new Object();
+        if (url.indexOf("?") != -1) {
+            var str = url.substr(1);
+            strs = str.split("&");
+            for(var i = 0; i < strs.length; i ++) {
+                theRequest[strs[i].split("=")[0]] = decodeURI(strs[i].split("=")[1]);
+            }
+        }
+        return theRequest;
+    }
+    var Request = new Object();
+    Request = GetRequest();
+    var id=Request['id'];
+    var type=Request['type'];
+    var dataJson={
+        id:id,
+        m:type,
+        c:'channel_material',
+        a:'massData',
+        do:'data'
+    }
+    $.ajax({
+        type: "GET",
+        url: "/api/web/index.php",
+        data: dataJson,
+        dataType: "json",
+        success: function (data) {
+            if (data.code == "10000") {
+                //if (data.returnCode == "0000") {
+                var html = "";
+                var data=data.data;
+                var isShow;
+                if (self.frameElement && self.frameElement.tagName == "IFRAME") {
+                    isShow=1;
+                }
+                for (var i = 0; i < data.length; i++) {
+                    var obj = data[i];
+                    var url=obj.url;
+                    if(isShow==1){
+                        url='javascript:void(0);';
+                    }
+                    if(i==0){
+                        html+='<a href="'+url+'" class="big_a"><img  class="big_img" src="'+obj.thumb_src+'"><p class="big_p">'+obj.title+'</p></a>';
+                    } else{
+                        html+='<a href="'+url+'"><dl class="padd10"><dt>' +
+                            '<img src="'+obj.thumb_src+'"/></dt><dd><a href="'+url+'"><h2>'+obj.title+'</h2></a>' +
+                            '</dd></dl></a>';
+                    }
+                }
+                $('.lists').html(" ");
+                $('.lists').append(html);
+                // 每次数据加载完，必须重置
+            } else {
+
+            }
+        }
+    });
+
+</script>
+</body>
+</html>

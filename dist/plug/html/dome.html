@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="../jq/jquery-2.1.0.js" ></script>
+    <script type="text/javascript" src="../jq/jquery.qrcode.min.js" ></script>
+    <style>
+        #htxPreviewWap {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            background-color: rgba(0, 0, 0, 0.4);
+            z-index: 9999999999;
+            width: 100%;
+            height: 100%;
+        }
+        #htxPreviewWap .zwf {
+            display: none;
+        }
+        #htxPreviewWap img {
+            max-width: 100%!important;
+        }
+        #htxPreviewWap video {
+            max-width: 100%!important;
+        }
+        #htxPreviewWap section {
+            max-width: 100% !important;
+        }
+        #htxPreviewWap .htxPreviewCen {
+            height: 770px;
+            overflow: hidden;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -407px;
+            margin-top: -320px;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewCode {
+            width: 350px;
+            height: 430px;
+            background-color: #ffffff;
+            float: right;
+            border-radius: 5px;
+            margin-top: 80px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewCode .codeUrl {
+            width: 100%;
+            min-height: 60px;
+            word-break: break-all;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            /* autoprefixer: off*/
+            -webkit-box-orient: vertical;
+            /* autoprefixer: on*/
+            -webkit-line-clamp: 3;
+            overflow: hidden;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewCode .codeUrl a {
+            color: rgba(0, 0, 0, 0.65);
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewCode .codeUrl a:hover {
+            color: #971d34;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewCode .codeImg {
+            width: 100%;
+            text-align: center;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewCode .codeImg img {
+            width: 300px;
+            height: 300px;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewCode .codeWord {
+            width: 100%;
+            height: 30px;
+            line-height: 20px;
+            text-align: center;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft {
+            float: right;
+            display: inline;
+            width: 350px;
+            height: 100%;
+            overflow: hidden;
+            margin-left: 30px;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent {
+            background-color: #ffffff;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent div {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .atlas .slick-dots li button:before {
+            color: transparent !important;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .atlas .pics .content div,
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .atlas .pics .content p {
+            font-size: 14px;
+            color: #ffffff;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .link {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .link iframe {
+            width: 125%;
+            height: 126%;
+            overflow-x: hidden;
+            transform: scale(0.8);
+            transform-origin: 0 0;
+            border: none;
+            padding: 0;
+        }
+
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .videoNew video {
+            width: 100%;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .videoLive1 video {
+            width: 100%;
+            height: 20%;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .imageText .content section {
+            width: auto;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .live {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .live video {
+            width: 100%;
+            height: 20%;
+        }
+        #htxPreviewWap .htxPreviewCen #htxPreviewLeft #htxPreviewContent .audio .btn i {
+            font-size: 30px;
+            color: #ffffff;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewIphone1 {
+            width: 325px;
+            height: 648px;
+            background: url(../../../public/images/phone.png) -753px 0px no-repeat;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewIphone1 .htxPreviewIphoneCon1 {
+            position: relative;
+            width: 278px;
+            height: 457px;
+            top: 108px;
+            left: 22px;
+            border-radius: 6px;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewIphone1 .htxPreviewIphoneCon1 .slick-slide img {
+            width: 278px;
+            height: 163px;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewIphone2 .htxPreviewIphoneCon2 .slick-slide img {
+            width: 295px;
+            height: 166px;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewIphone3 .htxPreviewIphoneCon3 .slick-slide img {
+            width: 308px;
+            height: 173px;
+        }
+        #htxPreviewWap .htxPreviewCen .htxPreviewIphone4 .htxPreviewIphoneCon4 .slick-slide img {
+            width: 326px;
+            height: 173px;
+        }
+        #htxPreviewWap .htxPreviewRight {
+            position: relative;
+            float: right;
+            display: inline;
+            width: 105px;
+        }
+        #htxPreviewWap .htxPreviewRight .htxPreviewRiIphone {
+            position: relative;
+            top: 80px;
+        }
+        #htxPreviewWap .htxPreviewRight .htxPreviewRiIphone .selectedSize {
+            color: #333333;
+            background-color: #ffffff;
+        }
+        #htxPreviewWap .htxPreviewRight .htxPreviewRiIphone span {
+            display: block;
+            border-radius: 15px;
+            padding: 2px 10px 2px;
+            border: 1px solid #fff;
+            color: #fff;
+            margin: 10px 0 10px;
+            cursor: pointer;
+            list-style: none;
+            text-align: center;
+        }
+        #htxPreviewWap .htxPreviewRight #singOutIphone:before {
+            content: "";
+            background: transparent url(../../../public/images/edit.png) no-repeat scroll 0% 0%;
+            background-position: 0px -456px;
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        #htxPreviewWap .htxPreviewRight #singOutIphone {
+            color: #fff;
+            font-size: 14px;
+            cursor: pointer;
+            position: relative;
+            top: 100px;
+        }
+
+    </style>
+</head>
+<body>
+<div id="htxPreviewWap">
+    <div class="htxPreviewCen">
+        <div class="htxPreviewCode">
+            <div class="codeUrl">预览地址：<a target='_blank' href='http://channel.wjdev-qywx.chinamcloud.com/web/html/preview.html?id=2&type=news' >http://channel.wjdev-qywx.chinamcloud.com/web/html/preview.html?id=2&type=news</a></div>
+            <div class="codeImg" id="code">
+            </div>
+            <div class="codeWord">温馨提示：由于微信平台限制，预览的效果跟在微信中可能有些许偏差</div>
+        </div>
+        <div class="htxPreviewIphone1" id="htxPreviewLeft">
+            <div id="htxPreviewContent" class="htxPreviewIphoneCon1">
+                <div class="link">
+                    <iframe src="http://channel.wjdev-qywx.chinamcloud.com/web/html/preview.html?id=2&type=news" id="iframe" name="iframe">
+                    </iframe>
+                </div>
+        </div>
+    </div>
+        <div class="htxPreviewRight" id="uid_div20">
+            <div class="htxPreviewRiIphone" id="uid_div21">
+                <span class="selectedSize" data-wwap="htxPreviewIphone1" data-nwap="htxPreviewIphoneCon1" >组稿</span>
+                <span data-wwap="htxPreviewIphone2" data-nwap="htxPreviewIphoneCon2" class="" >分享朋友圈</span>
+                <span data-wwap="htxPreviewIphone3" data-nwap="htxPreviewIphoneCon3" class="" >分享朋友</span>
+            </div>
+            <span id="singOutIphone" >退出预览</span>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    $("#code").qrcode({
+        width: 300, //宽度
+        height:300, //高度
+        text: "http://channel.wjdev-qywx.chinamcloud.com/web/html/preview.html?id=2&type=news" //任意内容
+    });
+    $("#singOutIphone").click(function () {
+        $('#htxPreviewWap').hide();
+    })
+</script>
+</body>
+</html>

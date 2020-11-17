@@ -1,0 +1,48 @@
+.dynamic-delete-button {
+  cursor: pointer;
+  position: relative;
+  top: 4px;
+  font-size: 24px;
+  color: #999;
+  transition: all .3s;
+}
+.dynamic-delete-button:hover {
+  color: #777;
+}
+.dynamic-delete-button[disabled] {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+.ChiefOrganizationSelect{
+  .show-items{
+    width: 90%;
+    display: inline-block;
+    margin-right: 10px;
+    vertical-align: top;
+    .content-border{
+      border: 1px solid #ddd;
+      margin-top: -1px;
+      .content-border{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+    }
+    .right-top{
+      border-left: 0;
+    }
+    .title-line{
+      text-align: center;
+      background: #dddddd;
+    }
+
+    .right-Content{
+      border-left: 1px solid #ddd;
+      margin-left: -1px;
+    }
+    .right-Col{
+      margin-left: -1px;
+    }
+  }
+
+}

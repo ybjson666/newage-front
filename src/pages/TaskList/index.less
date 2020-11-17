@@ -1,0 +1,141 @@
+
+.eachPageBox {
+  min-width: 900px;
+}
+
+.listCont {
+  padding: 20px;
+
+  .searchCont {
+    margin-top: 20px;
+  }
+
+  .header {
+    &-btns {
+      button {
+        margin-right: 20px;
+      }
+    }
+  }
+
+  .tableCont {
+    margin-top: 20px;
+  }
+
+}
+
+.tableOperateButton + .tableOperateButton {
+  margin-right: 15px;
+}
+
+.only-panel-add {
+  .add-body {
+    padding: 10px 0;
+    text-align: center;
+  }
+
+  .add-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 10px;
+    border-top: 1px solid #ddd;
+  }
+}
+
+.taskList-back-modal {
+  .back-content {
+    position: relative;
+  }
+
+  .back-tips {
+    margin-bottom: 30px;
+    padding-left: 40px;
+    text-align: left;
+  }
+  .tips-num{
+    position: absolute;
+    right: 67px;
+    bottom: 1px;
+    color: #ddd;
+  }
+  .tips-textArea{
+    width: 300px;
+    margin-right: 20px;
+    padding-bottom: 20px;
+    vertical-align:top;
+    resize: none;
+  }
+}
+
+.redeploy-box{
+  .redeploy-rows{
+    display: flex;
+    .redeploy-label{
+      width: 80px;
+      line-height: 30px;
+    }
+    .redeploy-select{
+      width:300px;
+    }
+    .redeploy-wraps{
+      width: 300px;
+      position: relative;
+      height: 150px;
+      .limit-box{
+        position: absolute;
+        right: 5px;
+        bottom: 5px;
+        text-align: right;
+        color: #d9d9d9;
+      }
+      .redeploy-textArea{
+        width: 100%;
+        resize: none;
+        height: 150px;
+      }
+    }
+    
+  }
+  .last-rows{
+    margin-top: 15px;
+  }
+}
+.aButton{
+  margin-right: 15px;
+}
+
+.records-wraps{
+  min-height: 200px;
+  max-height: 600px;
+  box-sizing: content-box;
+  padding: 5px 0;
+  padding-right: 20px;
+  overflow-y: scroll;
+  .none-record{
+    text-align: center;
+    line-height: 50px;
+    color: #999;
+  }
+  .ant-timeline{
+    h2{
+      font-size: 16px;
+      span{
+        color:#bc261a;
+        margin-left: 5px;
+      }
+    }
+    p{
+      .record-name{
+        color: #bc261a;
+        margin-right: 10px;
+      }
+    }
+    .remark{
+      background: #E5E5E5;
+      line-height: 30px;
+      border-radius: 4px;
+      padding: 0 10px;
+      margin-top: 5px;
+    }
+  }
+}

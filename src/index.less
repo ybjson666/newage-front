@@ -1,0 +1,258 @@
+@import './assets/style/mixins/clearfix';
+@import './assets/style/mixins/float';
+@import './assets/style/mixins/margin';
+
+@primary-color: #3e8ff8;
+
+html,
+body {
+  height: 100%;
+}
+
+canvas {
+  display: block;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  &:link,
+  &:visited,
+  &:hover,
+  &:active {
+    text-decoration: none;
+  }
+}
+
+body {
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.float-left {
+  .float(left);
+}
+
+.float-right {
+  .float(right);
+}
+
+.ml_5 {
+  .margin(left, 5px);
+}
+
+.mb_10 {
+  .margin(bottom, 10px);
+}
+
+.content-wrap {
+  min-height: 100%;
+  margin: 0 15px;
+}
+.table-cover-img {
+  width: 45px;
+  height: 45px;
+  margin: 0 5px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.content-wrap {
+  min-height: 100%;
+  margin: 0 15px;
+  padding-top: 15px;
+}
+
+
+
+.ant-table-wrapper{
+  .ant-table-content{
+    .ant-table-header { //针对表头和表格有点对不齐的情况
+      //overflow: hidden !important;
+      //width: calc(100% - 5px);
+      min-height: 52px !important;
+    }
+    table {
+      table-layout: fixed;
+      .ant-table-selection-column{
+        width: 60px;
+      }
+      tr th, tr td {
+        position: relative;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        line-height: 24px;
+        padding: 15px 6px;
+      }
+    }
+  }
+}
+//页面上部为面包屑，下面为主要内容
+// 面包屑容器样式
+.breadcrumbBox{
+  position: absolute;
+  top:0;
+  right: 0;
+  left:0;
+  z-index: 1000;
+  background:#fff;
+  //margin-bottom: 10px !important;
+  line-height:49px !important;
+  height: 49px;
+  padding-left: 15px !important;
+  .ant-breadcrumb-link{
+    .active{
+      //padding-left: 10px;
+      //font-size: 18px !important;
+      opacity:0.85 !important;
+      color: #000000 !important;
+      font-weight: bold;
+    }
+  }
+
+}
+// 主要内容容器样式
+.eachPageBox{
+  //height: calc(100% - 49px);
+  //padding: 0 10px;
+  position: relative;
+  margin-top: 54px;
+  height: calc(100% - 54px);
+  background: #ffffff;
+  min-width: 1000px;
+}
+//左右布局 左边是导航树容器
+.leftFatherBox{
+  background: #ffffff;
+}
+//左右布局 右边容器
+.rightFatherBox{
+  padding-left: 5px;
+  border-left: 1px solid #eeeeee;
+  //background: #ffffff;
+}
+//页面工具栏最外层容器
+.navTopBox{
+  padding:15px 15px 15px 15px;
+  .btnBox {
+    line-height: 30px;
+    height: 30px;
+    //margin-top: 15px;
+    button:not(:last-child){
+      margin-right: 10px;
+    }
+
+  }
+  .btnBox:not(:first-child){
+    margin-top: 15px;
+  }
+  .searchFatherBox{
+    width: 100%;
+    display: inline-block;
+    line-height: 50px;
+    background: #F8F8F8;
+    margin-top: 10px;
+    padding-left: 10px;
+    .searchBox{
+      line-height: 30px;
+      margin: 10px 10px 10px 0;
+      box-sizing: content-box;
+      .ant-select,.ant-calendar-picker,.ant-input-search{
+        margin-right: 10px;
+        vertical-align: top;
+      }
+      .ant-select-selection--single,.ant-input,.ant-select-selection__rendered{
+        height: 30px;
+        line-height: 30px;
+      }
+      .item-search-part{
+        margin-right: 10px;
+      }
+      .ant-btn{
+        height: 30px;
+      }
+
+    }
+  }
+
+}
+.mainContentBox{
+  padding:0 15px 0 10px;
+  .ant-table-wrapper,.ant-spin-nested-loading,.ant-spin-container{
+    height: 100%;
+    //.ant-table,.ant-table-content,.ant-table-scroll,.ant-table-scroll{
+    //    height: 100%;
+    //  .ant-table-body{
+    //    height: calc(100% - 95px);
+    //  }
+    //}
+  }
+  .ant-table-wrapper{
+    .ant-table{
+      font-size: 14px;
+    }
+    .ant-spin-container .ant-table-pagination.ant-pagination{
+      position: absolute;
+
+      bottom:15px;
+      right: 5px;
+      //margin-bottom: 15px !important;
+      margin: 0 !important;
+    }
+    .ant-table-selection-column{
+      padding-left: 10px !important;
+      padding-right: 14px !important;
+    }
+    .ant-spin-container{
+      .ant-table-tbody .ant-table-content table tr td{
+        line-height: 24px !important;
+        padding-top:15px;
+        padding-bottom:15px;
+      }
+    }
+    //分页横线
+    //.ant-spin-container .ant-table-pagination.ant-pagination:before {
+    .ant-spin-container:before {
+      content: " ";
+      height: 1px;
+      border-bottom: 1px solid #eeeeee;
+      width: 100%;
+      position: absolute;
+      //left: 12px;
+      left: 0;
+      bottom: 64px;
+      margin: 0;
+      z-index: 1;
+    }
+    .ant-table-placeholder{
+      border-bottom: none;
+    }
+
+  }
+  .ant-table-wrapper .ant-table-content .ant-table-header{
+    min-height: 49px !important;
+  }
+  .ant-table-header {
+    .ant-table-thead > tr > th{
+      height: 40px !important;
+      padding-top:1px !important;
+      padding-bottom: 1px !important;
+      background: #f3f3f3;
+      border-bottom:1px solid #eeeeee ;
+      border-top:1px solid #eeeeee ;
+    }
+    .ant-table-column-title{
+      font-weight: bold;
+    }
+  }
+}
+.tableOperateButton+.tableOperateButton{
+  margin-left: 15px;
+}
